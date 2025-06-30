@@ -4,6 +4,7 @@ import { login } from '../../services/auth';
 import { useAuth } from '../../hooks/useAuth';
 import logo2 from '../../assets/logo2.png';
 import fondo from '../../assets/fondo.png';
+// hola
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -37,7 +38,7 @@ const Login: React.FC = () => {
           className="mx-auto mb-6 w-24"
         />
         <h2 className="text-xl font-semibold mb-4">TxDx Secure</h2>
-        {error && <p className="text-red-600 mb-2">{error}</p>}
+        {error && <p className="text-red-400 mb-2">{error}</p>}
         <form onSubmit={handleSubmit} className="space-y-4 text-left">
           <div>
             <label className="block text-sm font-medium mb-1">Usuario:</label>
