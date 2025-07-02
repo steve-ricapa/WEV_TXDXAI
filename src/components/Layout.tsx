@@ -1,16 +1,11 @@
 import React from 'react';
-import Navbar from './Navbar';
-import { Outlet } from 'react-router-dom';
 
-const Layout: React.FC = () => {
+const LandingLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex h-screen">
-      <Navbar />
-      <main className="flex-1 bg-gray-100 p-6 overflow-auto">
-        <Outlet />
-      </main>
+    <div className="min-h-screen w-full bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white">
+      {children}
     </div>
   );
 };
 
-export default Layout;
+export default LandingLayout;

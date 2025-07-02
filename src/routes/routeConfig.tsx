@@ -17,6 +17,7 @@ import Settings from '../pages/Settings';
 import KeysConfig from '../pages/KeysConfig';
 import Login from '../pages/Auth/Login';
 import Register from '../pages/Auth/Register';
+import LandingLayout from '../components/Layout';
 
 export interface RouteConfig {
   path: string;
@@ -31,7 +32,16 @@ export const routes: RouteConfig[] = [
   { path: '/register', element: <Register />, name: 'Register', icon: null },
 
   // app
-  { path: '/',             element: <Home />,       name: 'Home',        icon: <HomeIcon size={20}/> },
+  { 
+    path: '/',
+    element: (
+      <LandingLayout>
+        <Home />
+      </LandingLayout>
+    ),
+    name: 'Home',
+    icon: <HomeIcon size={20}/> 
+  },
   { path: '/dashboard',    element: <Dashboard />,  name: 'Dashboard',   icon: <DashboardIcon size={20}/> },
   { path: '/tickets',      element: <Tickets />,    name: 'Tickets',     icon: <TicketIcon size={20}/> },
   { path: '/agents/sophia',element: <SophiaChat />, name: 'SophIA',      icon: <UsersIcon size={20}/> },

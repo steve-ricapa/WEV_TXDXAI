@@ -6,15 +6,17 @@ import { routes } from './routeConfig';
 const AppRoutes: React.FC = () => (
   <BrowserRouter>
     <Routes>
-      {/* rutas públicas */}
-      <Route path="/login"    element={routes.find(r=>r.path==='/login')?.element} />
-      <Route path="/register" element={routes.find(r=>r.path==='/register')?.element} />
+      {/* landing page sin Layout */}
+      <Route path="/" element={routes.find(r => r.path === '/')?.element} />
 
-      {/* rutas protegidas */}
+      {/* rutas públicas */}
+      <Route path="/login" element={routes.find(r => r.path === '/login')?.element} />
+      <Route path="/register" element={routes.find(r => r.path === '/register')?.element} />
+
+      {/* rutas protegidas con Layout */}
       <Route element={<Layout />}>
-        <Route path="/" element={routes.find(r=>r.path==='/')?.element} />
         {routes
-          .filter(r => !['/login','/register','/'].includes(r.path))
+          .filter(r => !['/', '/login', '/register'].includes(r.path))
           .map(r => <Route key={r.path} path={r.path} element={r.element} />)}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
