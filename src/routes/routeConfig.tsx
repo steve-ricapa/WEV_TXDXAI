@@ -31,7 +31,7 @@ export const routes: RouteConfig[] = [
   { path: '/register', element: <Register />, name: 'Register', icon: null },
 
   // app
-  { path: '/',             element: <Home />,       name: 'Home',        icon: <HomeIcon size={20}/> },
+  { path: '/home',         element: <Home />,       name: 'Home',        icon: <HomeIcon size={20}/> },
   { path: '/dashboard',    element: <Dashboard />,  name: 'Dashboard',   icon: <DashboardIcon size={20}/> },
   { path: '/tickets',      element: <Tickets />,    name: 'Tickets',     icon: <TicketIcon size={20}/> },
   { path: '/agents/sophia',element: <SophiaChat />, name: 'SophIA',      icon: <UsersIcon size={20}/> },

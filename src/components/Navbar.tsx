@@ -14,11 +14,6 @@ const Navbar: React.FC = () => {
       <nav>
         <ul>
           <li className="mb-2">
-            <NavLink to="/" className={({ isActive }) => `block px-4 py-2 rounded hover:bg-gray-700 ${isActive ? 'bg-gray-700' : ''}`}>
-              Home
-            </NavLink>
-          </li>
-          <li className="mb-2">
             <NavLink to="/dashboard" className={({ isActive }) => `block px-4 py-2 rounded hover:bg-gray-700 ${isActive ? 'bg-gray-700' : ''}`}>
               Dashboard
             </NavLink>
