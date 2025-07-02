@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login } from '../../services/auth';
 import { useAuth } from '../../hooks/useAuth';
 import logo2 from '../../assets/logo2.png';
 import fondo from '../../assets/fondo.png';
-// hola
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, login } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
     try {
-      await login({ username, password });
+      await login(username, password);
       navigate('/dashboard');
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : String(err);
@@ -30,13 +29,12 @@ const Login: React.FC = () => {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${fondo})` }}>
+    <div
+      className="flex items-center justify-center min-h-screen bg-cover bg-center"
+      style={{ backgroundImage: `url(${fondo})` }}
+    >
       <div className="w-full max-w-sm bg-white p-8 rounded-lg shadow-lg text-center">
-        <img
-          src={logo2}
-          alt="Logo"
-          className="mx-auto mb-6 w-24"
-        />
+        <img src={logo2} alt="Logo" className="mx-auto mb-6 w-24" />
         <h2 className="text-xl font-semibold mb-4">TxDx Secure</h2>
         {error && <p className="text-red-400 mb-2">{error}</p>}
         <form onSubmit={handleSubmit} className="space-y-4 text-left">
