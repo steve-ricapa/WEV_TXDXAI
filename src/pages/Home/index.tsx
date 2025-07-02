@@ -18,28 +18,28 @@ export default function LandingHome() {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-6 mt-16 text-center">
-        <h1 className="text-5xl font-extrabold leading-tight">
+      <section className="container mx-auto px-6 mt-24 text-center">
+        <h1 className="text-6xl font-extrabold leading-tight">
           Data to enrich your <br /> online business
         </h1>
-        <p className="mt-6 text-lg text-gray-300">
+        <p className="mt-6 text-xl text-gray-300">
           Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
           Elit sunt amet fugiat veniam occaecat.
         </p>
-        <div className="mt-8 flex justify-center space-x-4">
+        <div className="mt-12 flex justify-center space-x-6">
           <a
-            href="/get-started"
-            className="px-8 py-3 bg-indigo-600 rounded-lg font-semibold hover:bg-indigo-500 transition"
+            href="/register"
+            className="px-10 py-4 bg-indigo-600 rounded-lg font-semibold text-lg hover:bg-indigo-500 transition"
           >
             Get started
           </a>
           <a
-            href="#learn-more"
-            className="px-8 py-3 flex items-center space-x-2 hover:text-indigo-400 transition"
+            href="https://www.txdxsecure.com"
+            className="px-10 py-4 flex items-center space-x-2 text-lg hover:text-indigo-400 transition"
           >
             <span>Learn more</span>
             <svg
-              className="w-5 h-5"
+              className="w-6 h-6"
               fill="none"
               stroke="currentColor"
               strokeWidth={2}
@@ -53,10 +53,10 @@ export default function LandingHome() {
 
       {/* Dashboard Preview */}
       <section className="container mx-auto px-6 mt-24">
-        <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+        <div className="rounded-xl shadow-lg overflow-hidden">
           <img
-            src="/images/dashboard-screenshot.png"
-            alt="Dashboard preview"
+            src="https://img.freepik.com/vector-gratis/panel-usuario-panel-infografia-plantilla_23-2148378206.jpg?semt=ais_hybrid&w=740"
+            alt="User Panel Infographic"
             className="w-full object-cover"
           />
         </div>
