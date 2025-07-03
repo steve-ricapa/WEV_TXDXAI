@@ -23,11 +23,11 @@ export default function LandingHome() {
       {/* Hero Section */}
       <section className="container mx-auto px-6 mt-24 text-center">
         <h1 className="text-6xl font-extrabold leading-tight text-[#FFD166]">
-          Data to enrich your <br /> online business
+         Plataforma autónoma <br /> de agentes inteligentes
         </h1>
         <p className="mt-6 text-xl text-[#E0F7FA]">
-          Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
-          Elit sunt amet fugiat veniam occaecat.
+          Descubre el ecosistema de agentes autónomos que anticipa incidentes, <br />
+          automatiza operaciones y transforma tu infraestructura digital.
         </p>
         <div className="mt-12 flex justify-center space-x-6">
           <a
