@@ -35,7 +35,7 @@ export default function LandingHome() {
       {/* Hero Section */}
       <section className="container mx-auto px-6 mt-24 text-center">
         <h1 className="text-6xl font-extrabold leading-tight text-[#eea538]">
-         Plataforma autónoma <br /> de agentes inteligentes
+        Plataforma autónoma <br /> de agentes inteligentes
         </h1>
         <p className="mt-6 text-xl text-[#E0F7FA]">
           Descubre el ecosistema de agentes autónomos que anticipa incidentes, <br />

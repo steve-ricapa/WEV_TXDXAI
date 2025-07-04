@@ -24,27 +24,40 @@ const Tickets: React.FC = () => {
   }, []);
 
   if (loading) {
-    return <p>Cargando tickets...</p>;
+    return <p className="ml-10 mt-6">Cargando tickets...</p>;
   }
+
   if (error) {
-    return <p className="text-red-600">Error: {error}</p>;
+    return <p className="text-red-600 ml-10 mt-6">Error: {error}</p>;
   }
+
   if (!Array.isArray(tickets)) {
-    return <p>No hay tickets disponibles o el formato de datos es inválido.</p>;
+    return (
+      <p className="ml-10 mt-6">
+        No hay tickets disponibles o el formato de datos es inválido.
+      </p>
+    );
   }
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Tickets</h1>
-      <ul className="space-y-2">
-        {tickets.map((t) => (
-          <li key={t.id} className="bg-white rounded shadow p-3">
-            <p className="font-semibold">{t.subject}</p>
-            <p className="text-sm text-gray-600">Estado: {t.status}</p>
-            <p className="text-xs text-gray-500">Creado: {new Date(t.createdAt).toLocaleString()}</p>
-          </li>
-        ))}
-      </ul>
+    <div className="min-h-screen bg-gray-100 py-8 px-1">
+      <div className="max-w-2xl ml-10 mr-auto bg-white p-6 rounded-xl shadow">
+        <h1 className="text-2xl font-bold mb-4">Tickets</h1>
+        <ul className="space-y-3">
+          {tickets.map((t) => (
+            <li key={t.id} className="bg-white rounded shadow p-4 border border-gray-100">
+              <p className="font-semibold">{t.subject}</p>
+              <p className="text-sm text-gray-600">Estado: {t.status}</p>
+              <p className="text-xs text-gray-500">
+                Creado:{' '}
+                {t.createdAt && !isNaN(new Date(t.createdAt).getTime())
+                  ? new Date(t.createdAt).toLocaleString()
+                  : 'Fecha inválida'}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

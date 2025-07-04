@@ -3,9 +3,10 @@ import { BarChart2, Activity, ShieldCheck, AlertTriangle } from 'lucide-react';
 
 const Dashboard: React.FC = () => (
   <div className="min-h-screen bg-blue-100 py-10 px-6">
-    <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl p-8">
-      <h1 className="text-4xl font-bold text-gray-800 mb-6">Panel de Control</h1>
-      <p className="text-gray-600 text-lg mb-8">
+    {/* Contenedor movido a la izquierda */}
+    <div className="max-w-6xl mr-auto ml-10 bg-white rounded-2xl shadow-xl p-8">
+      <h1 className="text-4xl font-bold text-gray-800 mb-5">Panel de Control</h1>
+      <p className="text-gray-600 text-lg mb-5">
         Aquí encontrarás un resumen de métricas, actividad reciente y alertas del sistema.
       </p>
 
