@@ -5,7 +5,11 @@ import logo2 from '../../assets/logo.png';
 import XOC from '../../assets/XOC_1.png';
 import Cyber_news from '../../assets/Cyber_news.png';
 
+import { useExternalNews } from '../../hooks/useExternalNews';
+import NewsCard from '../../components/Newscard';
+
 export default function LandingHome() {
+  const { news, loading, error } = useExternalNews();
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#005B99] via-[#007AB8] to-[#005B99] text-[#ffffff] scroll-smooth">
       {/* Navbar */}
@@ -163,38 +167,29 @@ export default function LandingHome() {
             />
           </div>
           <div className="order-2 md:order-1">
-            <h3 className="text-2xl font-bold mb-4 text-[#eea538]">@DEVNET</h3>
+            <h3 className="text-2xl font-bold mb-4 text-[#eea538]">XOC</h3>
             <p className="mb-4 text-lg text-[#E0F7FA]">
-              Servicios de Arquitecturas que se integran a la red en el panorama de la tecnología programable,
-              llegando con estas habilidades a que pueda acelerar el negocio, catalizar nuevas aplicaciones
-              y llevando las prácticas de SecDevOps a las redes, permitiendo a la industria aprovechar al máximo
-              las capacidades de la nueva red para acelerar el negocio.
+              Se
             </p>
           </div>
         </div>
       </section>
 
       {/* Sección para @CYBERAUTH (Imagen Izquierda - Solo Imagen) */}
-      <section id="architect" className="bg-[#005B99] py-20 px-8 md:px-20 text-white">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-          {/* Imagen de @CYBERAUTH */}
-          <div className="w-full md:w-1/2">
-            <img
-              className="w-full h-full rounded-lg"
-              src="XOC.png"
-              alt="Cyberauth Image"
-            />
+      {/* Sección de Cybersecurity News */}
+      <section id="cybernews" className="container mx-auto px-6 mt-24">
+        <h2 className="text-4xl font-bold mb-6 text-[#eea538]">Cybersecurity News</h2>
+
+        {loading && <p>Cargando noticias…</p>}
+        {error   && <p className="text-red-500">Error: {error}</p>}
+
+        {!loading && !error && (
+          <div className="flex space-x-4 overflow-x-auto pb-4">
+            {news.map(n => (
+              <NewsCard key={n.id} item={n} />
+            ))}
           </div>
-          <div>
-            <h3 className="text-2xl font-bold mb-4 text-[#eea538]">@CYBERAUTH</h3>
-            <p className="mb-4 text-lg text-[#E0F7FA]">
-              Seguridad en la transformación digital, todos los elementos que intervienen en la red es necesario
-              asegurarla como plataforma e infraestructura, aplicamos metodologías y frameworks de seguridad,
-              y automatizamos la seguridad, programándola para que se defiendan en forma integral y autónoma contra ataques
-              informáticos.
-            </p>
-          </div>
-        </div>
+        )}
       </section>
 
       {/* Sección para @DEPLOYMENT (Imagen Derecha - Solo Imagen) */}
@@ -209,7 +204,7 @@ export default function LandingHome() {
             />
           </div>
           <div className="order-2 md:order-1">
-            <h3 className="text-2xl font-bold mb-4 text-[#eea538]">@DEPLOYMENT</h3>
+            <h3 className="text-2xl font-bold mb-4 text-[#eea538]">TXDX News</h3>
             <p className="mb-4 text-lg text-[#E0F7FA]">
               Conjunto de servicios para implementar soluciones IT en plataformas públicas o privadas de forma escalable y segura.
               Aceleramos el tiempo de despliegue y aseguramos la integridad del sistema.
