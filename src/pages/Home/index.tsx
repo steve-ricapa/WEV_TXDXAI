@@ -1,11 +1,14 @@
 import React from 'react';
 
+import logo2 from '../../assets/logo.png';
+import XOC from '../../assets/XOC_1.png';
+import Cyber_news from '../../assets/Cyber_news.png';
 export default function LandingHome() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#005B99] via-[#007AB8] to-[#005B99] text-white scroll-smooth">
+    <div className="min-h-screen bg-gradient-to-b from-[#005B99] via-[#007AB8] to-[#005B99] text-[#ffffff] scroll-smooth">
       {/* Navbar */}
       <header className="container mx-auto px-6 py-6 flex justify-between items-center">
-        <div className="text-2xl font-bold text-[#FFD166]">TxDxIA</div>
+        <div className="text-2xl font-bold text-[#eea538]">TXDXAI</div>
         <nav className="space-x-8">
           <a href="#product" className="hover:text-[#FFD166]">Product</a>
           <a href="#features" className="hover:text-[#FFD166]">Features</a>
@@ -22,7 +25,7 @@ export default function LandingHome() {
 
       {/* Hero Section */}
       <section className="container mx-auto px-6 mt-24 text-center">
-        <h1 className="text-6xl font-extrabold leading-tight text-[#FFD166]">
+        <h1 className="text-6xl font-extrabold leading-tight text-[#eea538]">
          Plataforma autónoma <br /> de agentes inteligentes
         </h1>
         <p className="mt-6 text-xl text-[#E0F7FA]">
@@ -32,13 +35,13 @@ export default function LandingHome() {
         <div className="mt-12 flex justify-center space-x-6">
           <a
             href="/register"
-            className="px-10 py-4 bg-[#007AB8] rounded-lg font-semibold text-lg hover:bg-[#005B99] transition"
+            className="px-10 py-4 bg-[#eea538] rounded-lg font-semibold text-lg hover:bg-[#f1d8b2] transition"
           >
             Get started
           </a>
           <a
             href="https://www.txdxsecure.com"
-            className="px-10 py-4 flex items-center space-x-2 text-lg hover:text-[#005B99] transition"
+            className="px-10 py-4 flex items-center space-x-2 text-lg hover:text-[#dddf6e] transition"
           >
             <span>Learn more</span>
             <svg
@@ -63,41 +66,58 @@ export default function LandingHome() {
             className="w-full object-cover"
           />
         </div>
-
         {/* Core Services - Botones flotantes */}
         <div className="mt-20 py-16 text-white text-center">
-          <h2 className="text-7xl font-extrabold tracking-wide mb-12 text-[#FFD166]">SERVICES</h2>
+          <h2 className="text-7xl font-extrabold tracking-wide mb-12 text-[#eea538]">SERVICES</h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10 max-w-6xl mx-auto px-6">
-            <a href="#architect" className="p-6 rounded-lg transition transform hover:scale-110 hover:bg-[#fff782]">
-              <svg className="w-12 h-12 mx-auto text-[#000000]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 16v-8m0 0L8 12m4-4l4 4" />
-              </svg>
+            <a
+              href="#architect"
+              className="p-6 rounded-lg transition transform hover:scale-110 bg-[#052644c4] hover:bg-[rgba(5,38,68,0.49)]"
+            >
+              <img
+          src={logo2}
+          alt="TxDxSecure Logo"
+          className="w-20 h-20 mx-auto"
+              />
               <p className="mt-4 font-bold text-lg tracking-wide">TxDxSecure</p>
             </a>
-            <a href="#devnet" className="p-6 rounded-lg transition transform hover:scale-110 hover:bg-[#fff782]">
-              <svg className="w-12 h-12 mx-auto text-[#000000]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 108 0H3z" />
-              </svg>
+            <a
+              href="#devnet"
+              className="p-6 rounded-lg transition transform hover:scale-110 bg-[#e48d0a] hover:bg-[#eea538]"
+            >
+              <img
+          src={XOC}
+          alt="XOC Logo"
+          className="w-20 h-20 mx-auto"
+              />
               <p className="mt-4 font-bold text-lg tracking-wide">XOC</p>
             </a>
-            <a href="#cyberauth" className="p-6 rounded-lg transition transform hover:scale-110 hover:bg-[#fff782]">
-              <svg className="w-12 h-12 mx-auto text-[#000000]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7h18M3 12h18M3 17h18" />
-              </svg>
+            <a
+              href="#cyberauth"
+              className="p-6 rounded-lg transition transform hover:scale-110 bg-[#3bbbd5b6] hover:bg-[#3bbbd5f5]"
+            >
+              <img
+          src={Cyber_news}
+          alt="Cybersecurity News"
+          className="w-20 h-20 mx-auto"
+              />
               <p className="mt-4 font-bold text-lg tracking-wide">Cibersecurity News</p>
             </a>
-            <a href="#deployment" className="p-6 rounded-lg transition transform hover:scale-110 hover:bg-[#fff782]">
-              <svg className="w-12 h-12 mx-auto text-[#000000]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 8a3 3 0 100-6 3 3 0 000 6zM4 21v-3a4 4 0 014-4h12" />
+            <a
+              href="#deployment"
+              className="p-6 rounded-lg transition transform hover:scale-110 bg-[#eec338] hover:bg-[#ffec83d8]"
+            >
+              <svg className="w-20 h-20 mx-auto text-[#000000]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15 8a3 3 0 100-6 3 3 0 000 6zM4 21v-3a4 4 0 014-4h12" />
               </svg>
-              <p className="mt-4 font-bold text-lg tracking-wide">TxDx News</p>
+              <p className="mt-4 font-bold text-lg tracking-wide">TXDX News</p>
             </a>
           </div>
         </div>
-      </section>
-      <section id="architect" className="bg-[#005B99] py-20 px-8 md:px-20 text-white">
-  <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            </section>
+            <section id="architect" className="bg-[#005B99] py-20 px-8 md:px-20 text-white">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
     {/* Video de TxDxSecure */}
     <div className="w-full md:w-2/3">
       <iframe
@@ -110,7 +130,7 @@ export default function LandingHome() {
       ></iframe>
     </div>
     <div className="w-full md:w-1/3">
-      <h3 className="text-2xl font-bold mb-4 text-[#FFD166]">TxDxSecure</h3>
+      <h3 className="text-2xl font-bold mb-4 text-[#eea538]">TxDxSecure</h3>
       <p className="mb-4 text-lg text-[#E0F7FA]">
         Somos una empresa peruana especializada en arquitecturas 
         de red digitales seguras, con el objetivo de facilitar y automatizar
@@ -134,7 +154,7 @@ export default function LandingHome() {
             />
           </div>
           <div className="order-2 md:order-1">
-            <h3 className="text-2xl font-bold mb-4 text-[#FFD166]">@DEVNET</h3>
+            <h3 className="text-2xl font-bold mb-4 text-[#eea538]">@DEVNET</h3>
             <p className="mb-4 text-lg text-[#E0F7FA]">
               Servicios de Arquitecturas que se integran a la red en el panorama de la tecnología programable,
               llegando con estas habilidades a que pueda acelerar el negocio, catalizar nuevas aplicaciones
@@ -157,7 +177,7 @@ export default function LandingHome() {
             />
           </div>
           <div>
-            <h3 className="text-2xl font-bold mb-4 text-[#FFD166]">@CYBERAUTH</h3>
+            <h3 className="text-2xl font-bold mb-4 text-[#eea538]">@CYBERAUTH</h3>
             <p className="mb-4 text-lg text-[#E0F7FA]">
               Seguridad en la transformación digital, todos los elementos que intervienen en la red es necesario
               asegurarla como plataforma e infraestructura, aplicamos metodologías y frameworks de seguridad,
@@ -180,7 +200,7 @@ export default function LandingHome() {
             />
           </div>
           <div className="order-2 md:order-1">
-            <h3 className="text-2xl font-bold mb-4 text-[#FFD166]">@DEPLOYMENT</h3>
+            <h3 className="text-2xl font-bold mb-4 text-[#eea538]">@DEPLOYMENT</h3>
             <p className="mb-4 text-lg text-[#E0F7FA]">
               Conjunto de servicios para implementar soluciones IT en plataformas públicas o privadas de forma escalable y segura.
               Aceleramos el tiempo de despliegue y aseguramos la integridad del sistema.

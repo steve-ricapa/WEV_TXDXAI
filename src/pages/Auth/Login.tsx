@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logotxdxAI.png';
 import fondo from '../../assets/fondo.png';
 
 const Login: React.FC = () => {
@@ -34,8 +34,8 @@ const Login: React.FC = () => {
       style={{ backgroundImage: `url(${fondo})` }}
     >
       <div className="w-full max-w-sm bg-white p-8 rounded-lg shadow-lg text-center">
-        <img src={logo} alt="Logo" className="mx-auto mb-6 w-24" />
-        <h2 className="text-xl font-semibold mb-4">TXDX AI</h2>
+        <img src={logo} alt="Logo" className="mx-auto mb-5 w-35" />
+        <h2 className="text-xl font-bold mb-4">TXDX AI</h2>
         {error && <p className="text-red-400 mb-2">{error}</p>}
         <form onSubmit={handleSubmit} className="space-y-4 text-left">
           <div>
