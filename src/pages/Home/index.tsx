@@ -1,14 +1,23 @@
 import React from 'react';
 
+import logotxdxai from '../../assets/logotxdxAI.png';
 import logo2 from '../../assets/logo.png';
 import XOC from '../../assets/XOC_1.png';
 import Cyber_news from '../../assets/Cyber_news.png';
+
 export default function LandingHome() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#005B99] via-[#007AB8] to-[#005B99] text-[#ffffff] scroll-smooth">
       {/* Navbar */}
       <header className="container mx-auto px-6 py-6 flex justify-between items-center">
-        <div className="text-2xl font-bold text-[#eea538]">TXDXAI</div>
+        <div className="flex items-center text-2xl font-bold text-[#eea538]">
+          <img
+            src={logotxdxai}
+            alt="Logo TxDxAI"
+            className="w-22 h-22 mr-2"
+          />
+          <span>TXDXAI</span>
+        </div>
         <nav className="space-x-8">
           <a href="#product" className="hover:text-[#FFD166]">Product</a>
           <a href="#features" className="hover:text-[#FFD166]">Features</a>
