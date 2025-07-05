@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import logo from '../../assets/logotxdxAI.png';
@@ -11,22 +11,24 @@ const Login: React.FC = () => {
   const navigate = useNavigate();
   const { isAuthenticated, login } = useAuth();
 
+  // Redirigir cuando cambie el estado de autenticación
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/dashboard');
+    }
+  }, [isAuthenticated, navigate]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     try {
       await login(username, password);
-      navigate('/dashboard');
+      // La redirección ocurre en el useEffect
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : String(err);
       setError(msg);
     }
   };
-
-  if (isAuthenticated) {
-    navigate('/dashboard');
-    return null;
-  }
 
   return (
     <div
