@@ -51,7 +51,7 @@ const KeysConfig: React.FC = () => {
   return (
     <div className="relative min-h-screen bg-white">
       {/* Fondo superior azul */}
-      <div className="absolute top-0 left-0 w-full h-48 bg-[#eea538] z-0" />
+      <div className="absolute top-0 left-0 w-full h-48 bg-white z-0" />
 
       {/* Contenido principal */}
       <div className="relative z-10 pt-20 px-4 flex justify-center items-start">
