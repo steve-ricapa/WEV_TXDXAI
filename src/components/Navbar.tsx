@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import { Settings, ChevronDown } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
 import logo from '../assets/logotxdxAI.png';
@@ -7,6 +7,14 @@ import logo from '../assets/logotxdxAI.png';
 const Navbar: React.FC = () => {
   const { isAuthenticated, logout } = useAuth();
   const [agentsOpen, setAgentsOpen] = useState(false);
+  const location = useLocation();
+
+  // ✅ Cerrar automáticamente el dropdown al navegar
+  useEffect(() => {
+    setAgentsOpen(false);
+  }, [location.pathname]);
+
+  const isAgentsActive = location.pathname.startsWith('/agents');
 
   return (
     <nav className="bg-[#005B99] text-white h-20 shadow-md">
@@ -32,11 +40,13 @@ const Navbar: React.FC = () => {
             </NavLink>
           </li>
 
-          {/* Dropdown: Agents con flechita */}
+          {/* Dropdown: Agents */}
           <li className="relative">
             <button
               onClick={() => setAgentsOpen((prev) => !prev)}
-              className="inline-flex items-center px-3 py-1 rounded hover:bg-gray-700 gap-1"
+              className={`inline-flex items-center px-3 py-1 rounded gap-1 ${
+                isAgentsActive ? 'bg-gray-700' : 'hover:bg-gray-700'
+              }`}
             >
               Agents
               <ChevronDown
@@ -46,8 +56,6 @@ const Navbar: React.FC = () => {
                 }`}
               />
             </button>
-
-            {/* Menú desplegable con animación */}
             <ul
               className={`absolute top-full mt-1 bg-gray-800 rounded shadow-lg z-50 transition-all duration-300 overflow-hidden ${
                 agentsOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
@@ -57,7 +65,6 @@ const Navbar: React.FC = () => {
                 <NavLink
                   to="/agents/sophia"
                   className="block px-4 py-2 hover:bg-gray-700"
-                  onClick={() => setAgentsOpen(false)}
                 >
                   SophIA
                 </NavLink>
@@ -66,7 +73,6 @@ const Navbar: React.FC = () => {
                 <NavLink
                   to="/agents/victoria"
                   className="block px-4 py-2 hover:bg-gray-700"
-                  onClick={() => setAgentsOpen(false)}
                 >
                   VictorIA
                 </NavLink>
