@@ -1,17 +1,19 @@
+// src/services/externalNews.ts
 import axios from 'axios';
 import type { ExternalArticle } from '../types/ExternalArticle';
 
-const NEWS_API_URL = 'https://newsapi.org/v2/top-headlines';
+// .env → VITE_GNEWS_API_KEY=tu_clave_gnews
+const API_KEY = import.meta.env.VITE_GNEWS_API_KEY as string;
+const BASE_URL = 'https://gnews.io/api/v4';
 
 export async function fetchExternalNews(): Promise<ExternalArticle[]> {
-  const apiKey = import.meta.env.VITE_NEWS_API_KEY;
-  const response = await axios.get(NEWS_API_URL, {
+  const { data } = await axios.get(`${BASE_URL}/search`, {
     params: {
-      category: 'technology',
-      q: 'cybersecurity',
-      pageSize: 5,
-      apiKey,
+      q: 'ciberseguridad',  // búsqueda en español
+      lang: 'es',            // idioma español
+      max: 20,
+      token: API_KEY,
     },
   });
-  return response.data.articles;
+  return data.articles as ExternalArticle[];
 }
